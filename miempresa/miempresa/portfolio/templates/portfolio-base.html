@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Portfolio Page{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav class="bg-blue-500 text-white py-4">
+      <h1 class="text-4xl font-bold text-center">Personal portfolio</h1>
+      <ul class="flex justify-center space-x-4 mt-2">
+        <li>
+          <a href="/" class="hover:bg-blue-700 px-4 py-2 rounded">Home</a>
+        </li>
+        <li>
+          <a href="/about" class="hover:bg-blue-700 px-4 py-2 rounded"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="/contact" class="hover:bg-blue-700 px-4 py-2 rounded"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="container px-8 py-8">{% block content %} {% endblock %}</div>
+  </body>
+</html>
