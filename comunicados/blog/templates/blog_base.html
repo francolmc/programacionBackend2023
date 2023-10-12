@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Comunicados{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <body>
+        <header><h1>Comunicados</h1></header>
+        <div class="menu">
+          <a href="/">Inicio</a>
+          <a href="/blog">Blog</a>
+          <a href="/about">Acerca de</a>
+        </div>
+        <main>
+            {% block content %} {% endblock %}
+        </main>
+        <footer><p>Todos los derechos reservados © 2023</p></footer>
+      </body>
+</body>
+</html>
