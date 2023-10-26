@@ -7,9 +7,13 @@
 </head>
 <body>
     <h1>Lista de tareas</h1>
+    <a href="{% url 'todo:task_list' %}">Nueva tarea</a>
     <ul>
         {% for task in tasks %}
-        <li>{{ task.title }} ({{ task.completed }})</li>
+        <li>{{ task.title }} ({{ task.completed }}) 
+            <a href="{% url 'todo:task_edit' task.id %}">Editar</a> | 
+            <a href="{% url 'todo:task_delete' task.id %}">Eliminar</a>
+        </li>
         {% endfor %}
     </ul>
 </body>
