@@ -1,0 +1,22 @@
+{% extends "todo_task_base.html" %}
+
+{% block title %}
+Lista de tareas
+{% endblock %}
+
+{% block title_page %}
+Lista de tareas
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'todoapp:task_create' %}" class="btn">Nueva tarea</a>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <span>{{ task.title }} | ({{ task.completed }})</span>
+        <a href="{% url 'todoapp:task_edit' task.id %}" class="btn">Editar</a>
+        <a href="{% url 'todoapp:task_delete' task.id %}" class="btn-danger">Eliminar</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

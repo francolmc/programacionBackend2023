@@ -1,0 +1,17 @@
+{% extends "todo_task_base.html" %}
+
+{% block title %}
+Agregar / Modificar tarea
+{% endblock %}
+
+{% block title_page %}
+Esta seguro de querer eliminar la tarea?
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn-danger">Si, eliminar</button>
+    <a href="{% url 'todoapp:task_list' %}">Regresar a la lista</a>
+</form>
+{% endblock %}

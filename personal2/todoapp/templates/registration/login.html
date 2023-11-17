@@ -1,0 +1,21 @@
+{% extends "todo_task_base.html" %}
+
+{% block title %}
+Iniciar sesión
+{% endblock %}
+
+{% block title_page %}
+Iniciar sesión en tu cuenta
+{% endblock %}
+
+{% block content %}
+<form method="post" class="auth-form">
+    {% csrf_token %}
+    <h2>Iniciar sesión</h2>
+    <label for="id_username">Nombre de usuario:</label>
+    {{ form.username }}
+    <label for="id_password">Contraseña:</label>
+    {{ form.password }}
+    <button type="submit" class="btn">Iniciar sesión</button>
+</form>
+{% endblock %}
